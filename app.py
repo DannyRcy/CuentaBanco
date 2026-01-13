@@ -1,6 +1,15 @@
+"""
+Aplicación de consola para interactuar con una cuenta bancaria,
+permitiendo depósitos, retiros, transferencias y consultas de saldo.
+"""
+
 from cuenta_banco import CuentaBanco
 
+
 def mostrar_menu():
+    """
+    Muestra el menú principal del sistema bancario en consola.
+    """
     print("\n===== MENÚ BANCO =====")
     print("1. Depósito")
     print("2. Retiro")
@@ -10,6 +19,9 @@ def mostrar_menu():
 
 
 def main():
+    """
+    Función principal que ejecuta el sistema bancario interactivo.
+    """
     cuenta = CuentaBanco("Titular Principal", "001", 0.0)
 
     while True:
@@ -27,9 +39,7 @@ def main():
                 print(cuenta.retiro_cuenta(monto))
 
             elif opcion == 3:
-                destino = input(
-                    "Ingrese nombre o número de cuenta destino: "
-                )
+                destino = input("Ingrese nombre o número de cuenta destino: ")
                 monto = float(input("Ingrese monto a transferir: "))
                 print(cuenta.transferencia_cuenta(monto, destino))
 
@@ -41,14 +51,14 @@ def main():
                 break
 
             else:
-                print("Opción inválida")
+                print("Opción inválida. Intente nuevamente.")
 
-        except ValueError as ve:
-            print(f"Error: {ve}")
-        except TypeError as te:
-            print(f"Error: {te}")
-        except Exception as e:
-            print(f"Error inesperado: {e}")
+        except ValueError as error:
+            print(f"Error de valor: {error}")
+        except TypeError as error:
+            print(f"Error de tipo: {error}")
+        except Exception as error:  # pylint: disable=broad-exception-caught
+            print(f"Error inesperado: {error}")
 
 
 if __name__ == "__main__":
