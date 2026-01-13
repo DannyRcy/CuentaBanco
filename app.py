@@ -1,6 +1,6 @@
 """
 Aplicación de consola para interactuar con una cuenta bancaria,
-permitiendo depósitos, retiros, transferencias y consultas de saldo.
+permitiendo depósitos, retiros, transferencias, consultas de saldo y opcion para salir.
 """
 
 from cuenta_banco import CuentaBanco

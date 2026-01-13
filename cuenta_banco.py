@@ -1,6 +1,6 @@
 """
 Define la clase CuentaBanco para la gestión básica de cuentas bancarias,
-incluyendo depósitos, retiros y transferencias.
+incluyendo depósitos, retiros y transferenciasy añadir una opcion para salir de la app.
 """
 
 # pylint: disable=unused-private-member
